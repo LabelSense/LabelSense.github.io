@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>LabelSense</title>
+
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/iconfont.css">
+  <script src="js/iconfont.js"></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      renderMathInElement(document.body, {
+        // customised options
+        // • auto-render specific keys, e.g.:
+        delimiters: [
+          { left: '$$', right: '$$', display: true },
+          { left: '$', right: '$', display: false },
+          { left: '\\(', right: '\\)', display: false },
+          { left: '\\[', right: '\\]', display: true }
+        ],
+        // • rendering keys, e.g.:
+        throwOnError: false
+      });
+    });
+  </script>
+
+</head>
+
+<body>
+  <div id="nav">
+    <div id="icon">
+      <a class="nav-button" href="#" style="margin-left: 2px; font-size: 24px">LabelSense</a>
+    </div>
+    <div>
+      <a class="nav-button" href="#home">Home</a>
+      <a class="nav-button" href="#abstract">Abstract</a>
+      <a class="nav-button" href="#introduction">Introduction</a>
+      <a class="nav-button" href="#methodology">Methodology</a>
+      <a class="nav-button" href="#experiments">Experiments</a>
+    </div>
+  </div>
+
+  <div id="home" style="position: absolute; top: 0;"></div>
+
+  <!-- banner -->
+  <div id="title">
+    <div id="title-wrapper">
+      <p id="title-text">LabelSense</p>
+    </div>
+    <p id="subtitle-text">
+      A Plug-and-play Centroid-based Label Semantic Enhanced <br>
+      Contrastive Learning for Text Classification
+      <br><br>
+    </p>
+    <div class="links">
+      <a href="https://github.com/CodingMonkey12/LabelSense" class="btn">
+        <svg class="icon" aria-hidden="true" style="width: 22px; height: 22px; padding: 0 5px 0 0;">
+          <use xlink:href="#icon-githublogo"></use>
+        </svg>
+        <span>Code</span>
+      </a>
+    </div>
+    <p id="title-padding-bottom">&nbsp;</p>
+  </div>
+
+
+  <div id="body">
+    <div class="section">
+      <div id="abstract" class="anchor"></div>
+      <h1>Abstract</h1>
+      <!-- <div class="image-container">
+        <img src="images/pipeline.jpg">
+      </div> -->
+      <p>
+        Understanding the relationship between a concept's intension (features) and extension (examples) is crucial in machine learning classification. Clear and precise definitions of each class (intension) help distinguish classes, while effective generalization (extension) ensures accurate predictions on unseen data. Balancing these aspects enhances model performance and generalization. Addressing the challenge of label semantics in text classification, we present LabelSense, a versatile "plug-and-play" approach that augments labels with rich explanations and illustrative examples, achieving robust label contextualization and enhanced label semantics. Leveraging Centroid-based Learning and contrastive learning techniques, our methodology significantly advances text classification performance across diverse datasets. Evaluation on various datasets, including legal and multi-label text datasets, demonstrates a notable enhancement of over 10 percentage points in Precision@1 compared to the baseline model, highlighting the effectiveness of LabelSense.
+      </p>
+    </div>
+
+    <div class="section">
+      <div id="introduction" class="anchor"></div>
+      <h1>Introduction</h1>
+      <div class="image-container">
+        <img src="images/label-semantic-enhancement.jpg" style="width: 40%;">
+        <div class="caption">Figure 1: An example of Label Semantic Enhancement. The original Label "motor car" from the dataset is passed through the Label Enhancer to obtain the Enhanced Semantic Label with rich semantics. Subsequently, it is incorporated into the LabelSense Pipeline for joint training with the text.</div>
+      </div>
+      <p>
+        Figure 1 demonstrates label semantic enhancement using the EUR-Lex dataset. The label "motor car" is enriched with additional semantic context, transforming it from a non-expressive numerical identifier into meaningful tokens. This enriched label includes the noun interpretation and relevant examples. The enhanced label and text are then fed into the LabelSense Pipeline for training, resulting in label predictions.
+      </p>
+      <p>Our contribution lies in three key aspects:</p>
+      <ul>
+        <li><strong>Comprehensive Label Semantics Utilization:</strong> We advocate for a thorough utilization of label semantics, departing from the conventional treatment of labels as arbitrary numerical identifiers. By integrating comprehensive label semantics into the text classification process, our approach aligns the model with human-like classification processes, enhancing accuracy and interpretability.</li>
+        <li><strong>Plug-and-Play LabelSense Model:</strong> We propose LabelSense, a flexible and adaptable model designed to seamlessly integrate with existing text classification architectures. LabelSense enriches labels with semantic context, enhancing the classification process. The approach combines semantically enhanced labels with Centroid-based Learning, momentum updates, and contrastive learning. It can be easily integrated into any model supporting encoding, making it practical and widely applicable.</li>
+        <li><strong>Performance Enhancement Across Diverse Datasets:</strong> Through extensive experimentation on diverse datasets, we demonstrate the effectiveness of our approach. Notably, the legal domain, represented by the EUR-Lex dataset, experiences a substantial improvement in Precision@1, highlighting the potential of our methodology to significantly enhance classification accuracy, especially in specialized domains. Furthermore, we conduct meticulous ablation and momentum experiments to discern the individual contributions of each component to the overall enhancement of the classification efficacy.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div id="methodology" class="anchor"></div>
+      <h1>Methodology</h1>
+      <h2>Centroid-based Learning Module</h2>
+      <div class="image-container">
+        <img src="images/algorithm.jpeg" style="width: 50%;">
+        <div class="caption">Algorithm 1: Centroid-based Learning.</div>
+      </div>
+      <p>Assuming that $c_i^e \in \mathbb{R}^{|S_i| \times |\mathbf{e}^t |}$ is the list of representation $e^t_j$ of $x_j \in S_i$ and $c_i = \sum c_i^e / |S_i|$, where $j$ represents the $j$-th in $S_i$, the Centroid-based Learning process is outlined in Algorithm 1.</p>
+    </div>
+
+    <div class="section">
+      <div id="experiments" class="anchor"></div>
+      <h1>Additional Experiments</h1>
+
+      <h2>Implementation Details</h2>
+      <div class="image-container">
+        <img src="images/label_enhancement_prompts.jpeg" style="width: 70%;">
+        <div class="caption">Table 1: Correspondence of Label Enhancement Prompts for Different Datasets.</div>
+      </div>
+      <div class="image-container">
+        <img src="images/label_enhanced_results.jpeg" style="width: 70%;">
+        <div class="caption">Table 2: Results of some label semantic enhancement. $\text{L}_\text{O}$ refers to the dataset's unaltered label. $\text{L}_\text{ES}$ indicates the label text enriched with label interpretations courtesy of the Label Enhancer. $\text{L}_\text{ESE}$ signifies the inclusion of a brief example in addition to the $\text{L}_\text{ES}$.</div>
+      </div>
+      <p>The original dataset labels undergo enhancement using our Label Enhancer. Specifically, we utilize ChatGPT to augment each label in two ways. Firstly, we directly acquire an explanatory context corresponding to each label. Secondly, we incorporate a succinct illustrative example based on this context. For each dataset, we designed tailored prompts, as detailed in Table 1, and a portion of the label semantic enhancement outcomes is presented in Table 2. We compare our approach with several baselines: CNLE, LCM, LCL, and FL, which utilize label semantics for text classification. Bert and Roberta are included to verify the effectiveness of our method, while SimCSE serves as a contrastive learning framework integrated into the Encoder. Additionally, we conducted experiments using Llama 3 to evaluate the performance of Large Language Models.</p>
+
+      <p>CNLE employs the co-attention method to compute semantic attention between the input text and the label on the Encoder. The resulting output from the Encoder is then fed into the Decoder to obtain the predicted label. LCM dynamically calculates the relationship between texts and labels during model training, generating a label distribution used as the training target. LCL considers inter-class label relationships, enhancing the model's ability to differentiate weight disparities among various negative samples. The FL method achieves simplicity and effectiveness by concatenating all label categories into the text, incorporating them into the model for training, and using the [CLS] output for classification. Supervised SimCSE utilizes the input text and other texts sharing the same label as positive examples, along with texts from different labels as negative examples for contrastive learning, demonstrating promising results across various datasets.</p>
+
+      <p>For Llama 3, use the following prompt to classify the dataset: "Classify the text into the following categories: &lt;categories&gt;. Note that this is a multi-label classification, meaning the text can belong to more than one category. Return only the category names, separated by commas. Do not include any additional text. Text: &lt;text&gt;".</p>
+        
+      <p>In our experiments, for the sake of result reproducibility and fairness, we set the temperature $\tau$ to 0.05, allocate equal proportions for the different losses ($\alpha$, $\beta$, and $\gamma$ set to 1), establish a batch size of 32, and conduct training for 10 epochs. The learning rate is fixed at $5 \times 10^{-5}$, and we opt for the AdamW optimizer. The experiments are repeated multiple times on a single GTX 3090 24G for robust evaluation.</p>
+
+      <h2>Performance Comparison</h2>
+      <div class="image-container">
+        <img src="images/performance_comparison_multi_class.jpeg" style="width: 50%;">
+        <div class="caption">Table 3: Performance comparison between LabelSense and the Roberta on the 20 Newsgroups, BGC, WOS datasets.</div>
+      </div>
+      <p>We further extend our analysis by conducting tests on well-known multi-class datasets. The performance comparisons are meticulously detailed in Table 3. Notably, our findings reveal that across these datasets, our approach consistently outperforms Roberta across all measured metrics. Particularly noteworthy are the substantial improvements in Hits@1 for BGC, as well as Hits@3 and Hits@5 for WOS.</p>
+
+      <div class="image-container">
+        <img src="images/two_semantic_enhancement_methods.jpeg" style="width: 70%;">
+        <div class="caption">Table 4: Partial examples comparison of two semantic enhancement methods.</div>
+      </div>
+      <p>Our approach extends beyond the utilization of large language models (LLMs) for semantic enhancement. In addition to employing ChatGPT for label semantic enhancement, we also explore leveraging Wikipedia for semantic enhancement. In this experiment, the "Wikipedia API" is employed, using dataset labels as queries to retrieve information from Wikipedia. Labels absent in Wikipedia retained the ChatGPT-enhanced labels, while those present in Wikipedia utilized their summary sections, specifically the initial sentence (up to the first period), as the semantic enrichment output. A comparison of the enhanced labels obtained through these two distinct semantic enhancement methods is presented in Table 4.</p>
+
+      <div class="image-container">
+        <img src="images/performance_comparison_between_two_enhanced_methods.jpeg" style="width: 50%;">
+        <div class="caption">Table 5: Performance comparison between Wikipedia-enhanced method and ChatGPT-enhanced method on Reuters-21578 dataset. The best results are bold in boldface.</div>
+      </div>
+      <p>The experiments are performed on the Reuters-21578 dataset, and the outcomes are illustrated in Table 5. The results show that using Wikipedia for semantic enhancement can also improve the model's performance in text classification. Although the improvement is not significant on BERT, it exceeds 2 percentage points on RoBERTa. We believe that better results can be achieved through further control and filtered descriptions of labels from Wikipedia.</p>
+
+      <h2>Momentum Experiment</h2>
+      <div class="image-container">
+        <img src="images/momentum_experiment.jpeg" style="width: 50%;">
+        <div class="caption">Figure 2: Performance comparison of LabelSense with different momentum rates on Reuters-21578 and EUR-Lex datasets.</div>
+      </div>
+      <p>In addition, this work includes momentum update components, which require setting the momentum rate. We evaluate the performance of different rates on Reuters-21578 and EUR-Lex datasets using Precision@1 and Micro-F1@5 metrics. We keep all other components in the model constant and only vary the momentum rate. Figure 2 shows the experimental results.</p>
+
+      <p>We define the Momentum Rate within the range of $\left[0, 0.9\right]$. A Momentum rate of 0 signifies the absence of momentum updates, whereas a rate of 0.9 indicates the minimal influence of newly predicted embeddings on centroids. In experiments conducted on the Reuters-21578 dataset, a momentum rate of approximately 0.4 results in a significant performance drop, even worse than not using momentum updates at all. Conversely, a rate of 0.6 yields the best outcomes on this dataset. In the case of the EUR-Lex dataset, the model achieves its best classification results in both Precision@1 and Micro-F1@5 when the momentum rate is set to 0.4. It can be observed that on these two datasets, certain individual momentum rates yield results even lower than when no momentum rate is added. However, when the momentum rate is well-tuned, the results significantly surpass those obtained without a momentum rate.</p>
+
+    </div>
+
+
+    <div id="footer" style="font-size: 12pt">
+      LabelSense
+    </div>
+</body>
+
+</html>
